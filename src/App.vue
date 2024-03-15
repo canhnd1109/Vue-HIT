@@ -1,57 +1,39 @@
 <template>
-    <div class="app">
-        <!-- Sidebar -->
-        <Sidebar />
-
-        <!-- Content -->
-        <router-view />
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal">
+            <router-link to="/home"> Vue Mini Project</router-link>
+        </h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <router-link to="/product">Product management</router-link>
+            <router-link to="/user">User management</router-link>
+        </nav>
+        <router-link to="/admin" class="btn btn-outline-primary" routerlink="cart"> Administrator</router-link>
     </div>
+    <router-view />
 </template>
 
-<script setup>
-import Sidebar from './components/Sidebar.vue';
-</script>
+<script></script>
 
-<style lang="scss">
-:root {
-    --primary: #4ade80;
-    --primary-alt: #22c55e;
-    --grey: #64748b;
-    --dark: #1e293b;
-    --dark-alt: #334155;
-    --light: #f1f5f9;
-    --sidebar-width: 300px;
+<style>
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Fira sans', sans-serif;
+nav {
+    padding: 30px;
 }
 
-body {
-    background: var(--light);
+nav a {
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 0 15px;
 }
 
-button {
-    cursor: pointer;
-    appearance: none;
-    border: none;
-    outline: none;
-    background: none;
-}
-
-.app {
-    display: flex;
-
-    main {
-        flex: 1 1 0;
-        padding: 2rem;
-
-        @media (max-width: 1024px) {
-            padding-left: 6rem;
-        }
-    }
+nav a.router-link-exact-active {
+    color: #42b983;
 }
 </style>
